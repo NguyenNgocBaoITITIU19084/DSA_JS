@@ -86,3 +86,55 @@ function concat(accumulatedString, item) {
 var words = ["the ", "quick ", "brown ", "fox "];
 var sentence = words.reduceRight(concat);
 console.log(sentence); // displays "fox brown quick the"
+
+//
+//
+//
+//
+/*================Array-Generating Iteration Function====================*/
+console.log("=======Non-Array-Generating Iteration Function=============");
+console.log("====Example of map()====");
+/*Applying the function to each element of an array and return a new array*/
+
+const increaseBy5 = (grade) => {
+  return (grade += 5);
+};
+
+var grades = [77, 65, 81, 92, 83];
+var newgrades = grades.map(increaseBy5);
+console.log("old array:", grades);
+console.log("new array of map function:", newgrades);
+
+/* map() function with string*/
+names = ["bao", "ngan", "baobao", "miu"];
+const getFirstWord = (name) => {
+  return name[0];
+};
+
+const firstWord = names.map(getFirstWord);
+console.log("get first word of name", firstWord);
+
+console.log("====Example of filter()====");
+/*Applying the Boolean function to each element of an array and return a new array 
+contains list value astisfy the Boolean function
+*/
+const gradesOfStudents = [
+  39, 43, 89, 19, 46, 54, 48, 5, 13, 31, 27, 95, 62, 64, 35, 75, 79, 88, 73, 74,
+];
+const pass = (grade) => {
+  return grade > 50;
+};
+
+const passingGrade = gradesOfStudents.filter(pass);
+console.log("Passing grade:", passingGrade);
+
+const findingString = (word) => {
+  if (word.indexOf("cie") > -1) {
+    return true;
+  }
+  return false;
+};
+
+var words = ["recieve", "deceive", "percieve", "deceit", "concieve"];
+var misspelled = words.filter(findingString);
+console.log("misspelled", misspelled);
